@@ -122,6 +122,10 @@ george.greet(); // -> Logs 'hello'
 /*** CHALLENGE 2 of 3 ***/
 
 class DeveloperClass extends PersonClass {
+	constructor(name, age) {
+		super(name);
+		this.age = age;
+	}
 	introduce() {
 		console.log(`Hi, my name is ${this.name}"`);
 	}
@@ -143,23 +147,31 @@ var userFunctionStore = {
 };
 
 function userFactory(name, score) {
-	let user = Object.create(userFunctionStore);
+	const user = Object.create(userFunctionStore);
 	user.type = "User";
 	user.name = name;
 	user.score = score;
 	return user;
 }
 
-var adminFunctionStore /* Put code here */;
+var adminFunctionStore = Object.assign({}, userFunctionStore); /* Put code here */
 
 function adminFactory(name, score) {
 	// Put code here
+	const admin = Object.create(adminFunctionStore);
+	Object.assign(admin, userFactory(name, score));
+	admin.type = "Admin";
+	return admin;
 }
 
 /* Put code here for a method called sharePublicMessage*/
 
 var adminFromFactory = adminFactory("Eva", 5);
 
+adminFunctionStore.sharePublicMessage = function () {
+	console.log("Welcome users!");
+};
+
 // /********* Uncomment these lines to test your work! *********/
-// adminFromFactory.sayType() // -> Logs "I am a Admin"
-// adminFromFactory.sharePublicMessage() // -> Logs "Welcome users!"
+adminFromFactory.sayType(); // -> Logs "I am a Admin"
+adminFromFactory.sharePublicMessage(); // -> Logs "Welcome users!"
