@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <script src="./index.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiz App</title>
+		<link rel="stylesheet" href="./assets/stylesheets/main.css" />
+	</head>
+	<body>
+		<div id="root">
+			<h1>Quiz App</h1>
+			<div class="quiz">
+				<h3>SCORE : <span class="score"></span></h3>
+				<div class="question"></div>
+				<a class="prev btn">Prev</a>
+				<a class="next btn">Next</a>
+			</div>
+		</div>
+		<script src="./assets/src/data.js"></script>
+		<script src="./assets/src/main.js"></script>
+	</body>
 </html>

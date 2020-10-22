@@ -1,0 +1,87 @@
+@import url(./reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Sora", sans-serif;
+}
+
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	margin: 2rem;
+	color: chocolate;
+}
+
+.quiz h3 {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: cadetblue;
+}
+
+.question {
+	border: 2px solid burlywood;
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin: 1rem;
+}
+
+.question > p {
+	font-size: 1.3rem;
+	font-weight: 500;
+	margin: 1.2rem;
+}
+
+.options {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.option {
+	width: 46%;
+	height: 120px;
+	border: 2px solid black;
+	font-size: 1.1rem;
+	font-weight: 400;
+	margin: 0.8rem;
+	cursor: pointer;
+	align-self: center;
+	line-height: 6;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+	font-weight: 500;
+	margin: 1rem 2rem;
+	font-size: 1rem;
+	color: purple;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.correct {
+	border: 5px solid green;
+	color: green;
+}
+
+.incorrect {
+	border: 5px solid red;
+	color: red;
+}
